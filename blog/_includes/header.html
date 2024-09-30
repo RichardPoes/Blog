@@ -1,0 +1,35 @@
+<header>
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-xxl">
+      {%- assign default_paths = site.pages | map: "path" -%}
+      {%- assign page_paths = site.header_pages | default: default_paths -%}
+      <a href="{{ "/" | relative_url }}" class="navbar-brand active">
+        <img src="/assets/logo/Ri-sharp-no-bg.svg" height="40px" alt="Logo triple A outlined" class="logo">
+      </a>
+      <a class="navbar-brand" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+
+      {%- if page_paths -%}
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          {%- for path in page_paths -%}
+          {%- assign my_page = site.pages | where: "path", path | first -%}
+          {%- if my_page.title -%}
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{{ my_page.url | relative_url }}">
+              {{ my_page.title | escape }}
+            </a>
+          </li>
+          {%- endif -%}
+          {%- endfor -%}
+          {%- include color-mode-selector.html -%}
+        </ul>
+      </div>
+      {%- endif -%}
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,17 @@
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: Richard's Blog
+email: richard.poes@outlook.com
+description: >-
+  Some C# thoughts and other stuff by RichardPoes.
+baseurl: ""
+url: blog.ririsharper.nl
+github_username:  RichardPoes
+
+# Build settings
+plugins:
+  - jekyll-feed
+
+exclude:
+  - .sass-cache/

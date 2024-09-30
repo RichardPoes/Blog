@@ -1,0 +1,8 @@
+// Order matters here, first we we override bootstrap variables
+@import "bootstrap-overrides";
+@import "bootstrap-color-overrides";
+
+// Then we inject bootstrap
+@import "bootstrap-5.3.3/bootstrap";
+
+// Rest of the code goes here
