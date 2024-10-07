@@ -5,4 +5,8 @@
 // Then we inject bootstrap
 @import "bootstrap-5.3.3/bootstrap";
 
+// Now we overwrite bootstrap dark theme variables
+@import "bootstrap-light-theme-overrides";
+@import "bootstrap-dark-theme-overrides";
+
 // Rest of the code goes here

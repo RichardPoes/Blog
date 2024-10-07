@@ -1,0 +1,38 @@
+<header>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-xxl">
+      {%- assign default_paths = site.pages | map: "path" -%}
+      {%- assign page_paths = site.header_pages | default: default_paths -%}
+      <span class="d-lg-none"></span>
+      <a href="{{ "/" | relative_url }}" class="navbar-brand active me-0 mg-lg-5">
+        <svg height="40px" viewBox="0 0 349.9 158.704" version="1.1" id="svg1" xmlns="http://www.w3.org/2000/svg"><defs id="defs1"><path id="rect8" d="M29.5 147.501h4214.849v578.942H29.5z"/></defs><g id="layer2" transform="matrix(1.20705 0 0 1.20705 -59.787 -97.469)" style="stroke-width:.828464"><path d="M83.641 162.958v-14.095h22.404q8.827 0 13.724-4.673 4.97-4.674 4.97-13.13 0-9.273-4.97-14.244-4.897-5.044-13.724-5.044H83.938l-1.78-14.095h23.887q16.394 0 25.296 8.309 8.976 8.308 8.976 23.59 0 15.875-8.976 24.629-8.902 8.753-25.296 8.753zm-13.798 40.06V97.677H84.68v105.34Zm56.528 0-23.59-49.555h16.32l25.074 49.554zm63.946 0v-74.184h15.727v74.183zm-29.97 0v-12.909H191.8v12.908zm44.213 0v-12.909h25.667v12.908zm-39.762-65.727v-12.908h41.246v12.908zm32.863-25.37q-4.525 0-7.79-3.19-3.19-3.265-3.19-7.79 0-4.599 3.19-7.789 3.265-3.19 7.79-3.19 4.6 0 7.79 3.19 3.19 3.19 3.19 7.79 0 4.524-3.19 7.788-3.19 3.19-7.79 3.19zm89.54 91.096 8.901-105.34h13.056l-8.902 105.34zm-42.285-26.706v-12.61h74.183v12.61zm9.94 26.706 8.902-105.34h13.056l-8.901 105.34Zm-9.94-66.023v-12.611h74.183v12.611z" id="text8" style="font-size:433.333px;line-height:1.25;font-family:'Cascadia Code';-inkscape-font-specification:'Cascadia Code';letter-spacing:0;word-spacing:0;white-space:pre;stroke-width:.219198" aria-label="Ri#"/></g></svg>
+        <span class="align-middle d-none d-lg-inline">{{ site.title | escape }}</span>
+      </a>
+
+      {%- if page_paths -%}
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-lg-2">
+          {%- for path in page_paths -%}
+          {%- assign my_page = site.pages | where: "path", path | first -%}
+          {%- if my_page.title -%}
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{{ my_page.url | relative_url }}">
+              {{ my_page.title | escape }}
+            </a>
+          </li>
+          {%- endif -%}
+          {%- endfor -%}
+        </ul>
+        <hr class="d-lg-none text-white-50"/>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          {%- include color-mode-selector.html -%}
+        </ul>
+      </div>
+      {%- endif -%}
+    </div>
+  </nav>
+</header>

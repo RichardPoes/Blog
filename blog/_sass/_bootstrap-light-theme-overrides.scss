@@ -1,0 +1,12 @@
+@import 'ririsharper/light-theme-tokens';
+
+[data-bs-theme="light"] {
+    --bs-body-bg: #{$light-theme-body-bg};
+    --bs-link-hover-color-rgb: #{$light-theme-link-hover-color-rgb};
+
+    --bs-tertiary-bg-rgb: #{$light-theme-tertiary-bg-rgb};
+
+    .navbar-brand svg path {
+        fill: $light-theme-logo-fill;
+    }
+}

@@ -1,0 +1,20 @@
+@import 'ririsharper/dark-theme-tokens';
+
+
+[data-bs-theme="dark"] {
+    --bs-body-bg: #{$dark-theme-body-bg};
+    --bs-body-color: #{$dark-theme-body-color};
+    --bs-tertiary-bg-rgb: #{$dark-theme-tertiary-bg-rgb};
+
+    --bs-link-color-rgb: #{$dark-theme-link-color-rgb};
+    --bs-link-hover-color-rgb: #{$dark-theme-link-hover-color-rgb};
+
+    .dropdown-menu {
+        --bs-dropdown-link-active-bg: #{$dark-theme-dropdown-link-active-bg};
+        --bs-dropdown-link-active-color: #{$dark-theme-dropdown-link-active-color};
+    }
+
+    .navbar-brand svg path {
+        fill: $dark-theme-logo-fill;
+    }
+}

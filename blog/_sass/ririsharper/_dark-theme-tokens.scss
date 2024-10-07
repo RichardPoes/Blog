@@ -1,0 +1,28 @@
+@import 'colors';
+
+// Some reusable variables first.
+$dark-theme-red: $richard-pale-red-500;
+$dark-theme-blue: $richard-pale-blue-500;
+$dark-theme-yellow: $richard-yellow-500;
+$dark-theme-green: $richard-pale-green-500;
+$dark-theme-purple: $richard-pale-purple-500;
+
+$dark-theme-red-rgb: to-rgb($dark-theme-red);
+
+// Then some more generic variables
+$dark-theme-tertiary-bg-rgb: to-rgb($richard-grey-900);
+
+// Body
+$dark-theme-body-bg: $richard-grey-1000;
+$dark-theme-body-color: $richard-grey-300;
+
+// Links
+$dark-theme-link-color-rgb: $dark-theme-red-rgb;
+$dark-theme-link-hover-color-rgb: to-rgb($richard-pale-red-600);
+
+// Dropdown
+$dark-theme-dropdown-link-active-bg: $dark-theme-red;
+$dark-theme-dropdown-link-active-color: $richard-grey-1000;
+
+// Logo
+$dark-theme-logo-fill: $dark-theme-red;

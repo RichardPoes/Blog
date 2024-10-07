@@ -1,7 +1,5 @@
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-
-title: Richard's Blog
+title: RiSharp's Blog
+author: Richard AKA RiSharp AKA RichardPoes
 email: richard.poes@outlook.com
 description: >-
   Some C# thoughts and other stuff by RichardPoes.

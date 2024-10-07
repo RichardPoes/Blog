@@ -1,0 +1,25 @@
+// Light theme is incomplete (for now), as we use a lot more bootstrap defaults for this.
+@import 'colors';
+
+// Some reusable variables first.
+$light-theme-red: $richard-red-500;
+$light-theme-blue: $richard-blue-500;
+$light-theme-yellow: $richard-yellow-500;
+$light-theme-green: $richard-green-500;
+$light-theme-purple: $richard-purple-500;
+
+$light-theme-red-rgb: to-rgb($light-theme-red);
+
+// Then some more generic variables
+$light-theme-tertiary-bg-rgb: to-rgb($richard-pale-red-100);
+
+// Body
+$light-theme-body-bg: $richard-grey-100;
+
+// Links
+
+// Dropdown
+$light-theme-link-hover-color-rgb: to-rgb($richard-red-400);
+
+// Logo
+$light-theme-logo-fill: $light-theme-red;
