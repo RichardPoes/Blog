@@ -4,31 +4,33 @@ layout: default
 
 <div class="home">
   {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
+  <h1 class="page-heading">{{ page.title }}</h1>
   {%- endif -%}
 
   {{ content }}
 
   {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
-
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+  <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+    {%- for post in site.posts -%}
+    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="/assets/favicon/android-chrome-192x192.png" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{ post.title | escape }}</h5>
+            {%- if site.show_excerpts -%}
+              <p class="card-text">{{ post.excerpt }}</p>
+            {%- endif -%}
+            <p class="card-text"><small class="text-body-secondary">{{ post.date | date: date_format }}</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {%- endfor -%}
+  <p class="rss-subscribe">subscribe <a href="{{ " /feed.xml" | relative_url }}">via RSS</a></p>
   {%- endif -%}
 
 </div>
