@@ -1,0 +1,9 @@
+baseURL = 'https://blog.ririsharp.nl/'
+languageCode = 'en-us'
+title = "RiRiSharp's Blog"
+theme = 'RiRiSharpTheme'
+ignoreFiles = ["themes/RiRiSharpTheme/content/"]
+
+[taxonomies]
+	tag = "tags"
+	author = "authors"
