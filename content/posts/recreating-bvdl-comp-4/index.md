@@ -51,7 +51,7 @@ what if I trace each side of the shape separately and then remove line-parts sti
 I didn't know how to do this, but with a quick internet seach I found out this seemed quite possible.
 First, trace out each side of the shape.
 Then drag your cursor to select all four lines.
-Lastly _fracture_ the shape by pressing ({{< kbd >}}Alt{{< /kbd >}} + {{< kbd >}}Shift{{< /kbd >}} + {{< kbd >}}F{{< /kbd >}}) while the selection is still active.
+Lastly _fracture_ the shape by pressing {{< kbd >}}Alt{{< /kbd >}} + {{< kbd >}}Shift{{< /kbd >}} + {{< kbd >}}F{{< /kbd >}} while the selection is still active.
 Using this approach I could duplicate slanted lines so that the slanted sides of multiple adjacent trapeziums had the same angle.
 ![The better working fracturing approach](fracturing.gif)
 
