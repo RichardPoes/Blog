@@ -3,6 +3,7 @@ languageCode = 'en-us'
 title = "RiRiSharp's Blog"
 theme = 'RiRiSharpTheme'
 ignoreFiles = ["themes/RiRiSharpTheme/content/"]
+enableEmoji = true
 
 [taxonomies]
 	tag = "tags"
