@@ -1,7 +1,11 @@
 +++
 name = "Marc"
-email = "jdfj312o8@mozmail.com"
-summary = "Richard is the creator and so far only author of this blog. He has a huge interest in technology, mathematics and science. To do more fun little projects he created this blog to document about them."
+email = "r4tdwj1yk@mozmail.com"
+summary = """
+Marc works as a C++ developer, working on rail infrastructure. 
+Moreover he is the maintainer of the open source C++ package cpp-lazy.
+"""
 +++
 
-Some text
+Marc works as a C++ developer, working on rail infrastructure. 
+Moreover he is the maintainer of the open source C++ package cpp-lazy.
