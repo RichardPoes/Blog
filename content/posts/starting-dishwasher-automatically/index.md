@@ -34,12 +34,13 @@ So we just looked for energy companies offering a dynamic contract, and picked a
 After the dust had settled from the moving, we looked around if we could find a (semi) public API somewhere. 
 We even reached out to their customer service, but there was no API we could use.
 Which, if you ask us, is a bit weird, because to actually leverage those dynamic prices, a lot of automation needs to be done.
+We don't expect a lot of people to stay up at night to turn on specific devices.
 
-We were however able to see the dynamic prices ourselves.
-The prices did however come baked in an HTML page.
+However, we were able to see the dynamic prices ourselves.
+The prices came baked in an HTML page.
 It looked something like this:
 
-```html
+```html {caption="Partial HTML returned when looking for currect prices"}
 <table class="pricing-table">
     <thead class="has-pricing">
         <tr>
@@ -86,14 +87,21 @@ It looked something like this:
 </table>
 ```
 
-This would render in a table looking somewhat like **Table ??**, as shown below.
+This would render in a table looking somewhat like {{< cref-tab id="tab:ex-pricing" >}}, as shown below.
 
+{{< table caption="Example of pricing data" id="tab:ex-pricing">}}
 | Period     | Today €/kWh average 0.23379 | Tomorrow €/kWh average 0.27562 |
 |------------|-----------------------------|--------------------------------|
 | 00 - 01 hr | 0.17505                     | 0.25571                        |
 | 01 - 02 hr | 0.16766                     | 0.25185                        |
+{{< /table >}}
 
+We immediately realized we could scrape the data from that webpage.
+Of course, VrijOpNaam would not be too keen on that, so we had to make sure we did not query the pricing website too much.
+So the idea was to create a local webserver which would cache the pricing data for us.
+It would only fetch new prices at VrijOpNaam once or twice a day and we could let Home Assistant query the data at will.
 
+# Automating the VrijOpNaam login process
 
 ```yaml
 sensor:
