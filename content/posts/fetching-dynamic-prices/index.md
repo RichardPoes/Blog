@@ -150,3 +150,44 @@ With the explanation given above, the sign-in process was now straightforward an
 
 Once signed in, we could start scraping the HTML table.
 This was done using the Python library [Beautiful Soup](https://beautiful-soup-4.readthedocs.io/en/latest/).
+Given the fact that we are logged in, are on the page where the electricity pricing table is present and use the following table: ![Vrijopnaam dynamic electricity price table](pricing-table-explained.png)
+We can write some very compact Python code to parse the table.
+
+```python {caption="Python code to parse the pricing table"}
+from bs4 import BeautifulSoup
+import asyncio
+
+
+async def scrape_prices() -> str:
+    # Gets the HTML page and returns it
+    ...
+
+async def parse_prices(html: str):
+    soup = BeautifulSoup(html, 'html.parser')
+    # Find the table which has a class named 'pricing-table'
+    table = soup.find('table', class_='pricing-table')
+    # For each row in this table
+    for row in table.find_all('tr'):
+        # We have three columns in one row. The first is the period,
+        # the second is today's price and the third is tomorrow's price
+        columns = row.find_all('td')
+        # We now have one <td> element. 
+        # But each <td> element has a <span> element
+        period, today_price, tomorrow_price = columns
+        # So, we need to extract the text from the <span> element
+        # for each of the three columns
+        period = period.find('span').text
+        today_price = today_price.find('span').text
+        tomorrow_price = tomorrow_price.find('span').text
+        print(f'{period}: {today_price} - {tomorrow_price}')
+
+async def main():
+    html = await scrape_prices()
+    await parse_prices(html)
+    # Here the output will be printed. It wil be something like:
+    # 00-01 uur: 0.17505 - 0.25571
+    # 01-02 uur: 0.16766 - 0.25185
+    # etc...
+
+asyncio.run(main())
+```
